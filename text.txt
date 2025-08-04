@@ -1,0 +1,1 @@
+I feel like this is super overcomplicated. Can we not just keep it like it was and you make a file where I type if "location_raw": "Stadioplein\nAmsterdam" = Stadionplein 24, 1076 CM Amsterdam

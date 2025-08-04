@@ -1,0 +1,76 @@
+{
+  "mappings": {
+    "Marktplein\nPiet heinlaan\nKatwijk aan zee": {
+      "corrected_address": "Piet Heinlaan, 2225 Katwijk aan Zee",
+      "venue": "Marktplein",
+      "location_address": "Piet Heinlaan",
+      "postal_code": "2225",
+      "city": "Katwijk aan Zee",
+      "note": "Market square in Katwijk"
+    },
+    "FLEVONICE\nStrandgaperweg 20\nBiddinghuizen": {
+      "corrected_address": "Strandgaperweg 20, 8256 RZ Biddinghuizen",
+      "venue": "FLEVONICE",
+      "location_address": "Strandgaperweg 20",
+      "postal_code": "8256 RZ",
+      "city": "Biddinghuizen",
+      "note": "Ice skating rink in Biddinghuizen"
+    },
+    "Fletcher Hotel Sittard.\nTopsporthal\nMilaanstraat 115\n6135 LH Sittard": {
+      "corrected_address": "Milaanstraat 115, 6135 LH Sittard",
+      "venue": "Topsporthal",
+      "location_address": "Milaanstraat 115",
+      "postal_code": "6135 LH",
+      "city": "Sittard",
+      "note": "Sports hall at Fletcher Hotel Sittard"
+    },
+    "DE VECHTSEBANEN\nMississippiedreef 151\n3565 CE Utrecht": {
+      "corrected_address": "Mississippidreef 151, 3565 CE Utrecht",
+      "venue": "DE VECHTSEBANEN",
+      "location_address": "Mississippidreef 151",
+      "postal_code": "3565 CE",
+      "city": "Utrecht",
+      "note": "Sports complex in Utrecht (note: corrected spelling of street name)"
+    },
+    "Hanse Halle\nGriether straat 110-120\n47546 Kalkar\nDuitsland": {
+      "corrected_address": "Griether Straße 110-120, 47546 Kalkar, Germany",
+      "venue": "Hanse Halle",
+      "location_address": "Griether Straße 110-120",
+      "postal_code": "47546",
+      "city": "Kalkar, Germany",
+      "note": "German location - Wunderland Kalkar"
+    },
+    "Stadioplein\nAmsterdam": {
+      "corrected_address": "Stadionplein, 1076 Amsterdam",
+      "venue": "Stadionplein",
+      "location_address": "Stadionplein",
+      "postal_code": "1076",
+      "city": "Amsterdam",
+      "note": "Stadium square in Amsterdam"
+    },
+    "": {
+      "corrected_address": "Eemnesserweg 2, 3755 LD Eemnes",
+      "venue": "Sporthal Eemnes",
+      "location_address": "Eemnesserweg 2",
+      "postal_code": "3755 LD",
+      "city": "Eemnes",
+      "note": "Default address for Eemnes markets (needs verification)"
+    },
+    "Evenemententerrein Down under\nLaagravense plas\nRavensewetering 1\n3439 ZZ Nieuwegein": {
+      "corrected_address": "Ravensewetering 1, 3439 ZZ Nieuwegein",
+      "venue": "Evenemententerrein Down Under",
+      "location_address": "Ravensewetering 1",
+      "postal_code": "3439 ZZ",
+      "city": "Nieuwegein",
+      "note": "Event area at Laagravense Plas"
+    },
+    "Sporthal Dijnselburg\nBurgemeester schenkpad 2\nZeist 3705 GK": {
+      "corrected_address": "Badmeester Schenkpad 2, 3705 GK Zeist, Netherlands",
+      "venue": "Sporthal Dijnselburg",
+      "location_address": "Burgemeester Schenkpad 2",
+      "postal_code": "3705 GK",
+      "city": "Zeist",
+      "note": "Sports hall in Zeist - added Netherlands for better geocoding"
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "name": "nederlandse-vlooienmarkten",
+  "version": "1.0.0",
+  "description": "Interactieve kaart van Nederlandse vlooienmarkten",
+  "main": "index.html",
+  "scripts": {
+    "start": "python -m http.server 5500",
+    "serve": "npx serve .",
+    "scrape": "cd scrapers && python gather_urls.py && python scrape_markets.py",
+    "clean-data": "cd scrapers && python cleanup_data.py",
+    "update-data": "npm run scrape && npm run clean-data"
+  },
+  "keywords": [
+    "vlooienmarkt",
+    "flea-market",
+    "netherlands",
+    "map",
+    "leaflet"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "devDependencies": {
+    "serve": "^14.2.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/nederlandse-vlooienmarkten.git"
+  },
+  "homepage": "https://nederlandse-vlooienmarkten.netlify.app",
+  "bugs": {
+    "url": "https://github.com/yourusername/nederlandse-vlooienmarkten/issues"
+  }
+}

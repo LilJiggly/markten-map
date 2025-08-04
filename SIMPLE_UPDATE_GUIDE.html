@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>🏪 How to Update Your Flea Market Website</title>
+    <style>
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          sans-serif;
+        line-height: 1.6;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #f8f9fa;
+        color: #333;
+      }
+
+      .container {
+        background: white;
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      h1 {
+        color: #2c3e50;
+        text-align: center;
+        border-bottom: 3px solid #3498db;
+        padding-bottom: 15px;
+        margin-bottom: 30px;
+      }
+
+      h2 {
+        color: #34495e;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 12px 20px;
+        border-radius: 8px;
+        margin-top: 30px;
+      }
+
+      h3 {
+        color: #2980b9;
+        border-left: 4px solid #3498db;
+        padding-left: 15px;
+        margin-top: 25px;
+      }
+
+      .step {
+        background: #ecf0f1;
+        padding: 20px;
+        border-radius: 8px;
+        margin: 15px 0;
+        border-left: 5px solid #3498db;
+      }
+
+      .step h3 {
+        margin-top: 0;
+        color: #2c3e50;
+        border: none;
+        padding: 0;
+      }
+
+      .code-output {
+        background: #2c3e50;
+        color: #ecf0f1;
+        padding: 15px;
+        border-radius: 6px;
+        font-family: "Monaco", "Menlo", monospace;
+        margin: 10px 0;
+        overflow-x: auto;
+      }
+
+      .success {
+        background: #d5f4e6;
+        border-left: 5px solid #27ae60;
+        padding: 15px;
+        border-radius: 6px;
+        margin: 10px 0;
+      }
+
+      .warning {
+        background: #fef9e7;
+        border-left: 5px solid #f39c12;
+        padding: 15px;
+        border-radius: 6px;
+        margin: 10px 0;
+      }
+
+      .error {
+        background: #fadbd8;
+        border-left: 5px solid #e74c3c;
+        padding: 15px;
+        border-radius: 6px;
+        margin: 10px 0;
+      }
+
+      .highlight {
+        background: #fff3cd;
+        padding: 2px 6px;
+        border-radius: 4px;
+        font-weight: bold;
+      }
+
+      .button {
+        background: #3498db;
+        color: white;
+        padding: 8px 16px;
+        border-radius: 6px;
+        text-decoration: none;
+        display: inline-block;
+        font-weight: bold;
+        margin: 5px;
+      }
+
+      .play-button {
+        background: #27ae60;
+        color: white;
+        padding: 6px 12px;
+        border-radius: 4px;
+        font-weight: bold;
+      }
+
+      ol,
+      ul {
+        padding-left: 25px;
+      }
+
+      li {
+        margin: 8px 0;
+      }
+
+      .summary-box {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 20px;
+        border-radius: 10px;
+        margin: 20px 0;
+      }
+
+      .summary-box h3 {
+        color: white;
+        margin-top: 0;
+        border: none;
+        padding: 0;
+      }
+
+      .footer {
+        text-align: center;
+        margin-top: 40px;
+        padding-top: 20px;
+        border-top: 2px solid #ecf0f1;
+        color: #7f8c8d;
+      }
+
+      .troubleshooting {
+        background: #f8f9fa;
+        border: 2px solid #dee2e6;
+        border-radius: 8px;
+        padding: 20px;
+        margin: 20px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>🏪 How to Update Your Flea Market Website</h1>
+      <p style="text-align: center; font-style: italic; color: #7f8c8d">
+        A simple guide for non-programmers
+      </p>
+
+      <h2>🎯 What This Guide Does</h2>
+      <p>
+        Your website shows flea markets on a map. Sometimes new markets are
+        added or old ones are removed from the source website (donevents.nl).
+        This guide shows you how to update your website with the latest
+        information.
+      </p>
+
+      <h2>⏰ When to Update</h2>
+      <ul>
+        <li>
+          <strong>Every week</strong> during market season (August - December)
+        </li>
+        <li><strong>Once a month</strong> during quiet periods</li>
+        <li>
+          <strong>When you notice</strong> your website is missing new markets
+        </li>
+      </ul>
+
+      <h2>🚀 How to Update (3 Simple Steps)</h2>
+
+      <div class="step">
+        <h3>Step 1: Get New Market URLs 🔍</h3>
+        <ol>
+          <li><strong>Open VS Code</strong> (your coding program)</li>
+          <li>
+            <strong>Find the file</strong> called
+            <span class="highlight">gather_urls.py</span> in the
+            <span class="highlight">scrapers</span> folder
+          </li>
+          <li>
+            <strong
+              >Click the <span class="play-button">▶️ play button</span></strong
+            >
+            at the top right of VS Code
+          </li>
+          <li><strong>Wait</strong> for it to finish (about 10 seconds)</li>
+        </ol>
+
+        <div class="success">
+          <strong>What you'll see:</strong>
+          <div class="code-output">
+            ✅ Successfully gathered 48 market URLs<br />
+            📁 Saved to data/market_urls.json
+          </div>
+        </div>
+
+        <p>
+          <strong>What this does:</strong> Gets a list of all current markets
+          from the donevents.nl website.
+        </p>
+      </div>
+
+      <div class="step">
+        <h3>Step 2: Get Market Details 📊</h3>
+        <ol>
+          <li>
+            <strong>Find the file</strong> called
+            <span class="highlight">scrape_markets_enhanced.py</span> in the
+            <span class="highlight">scrapers</span> folder
+          </li>
+          <li>
+            <strong
+              >Click the <span class="play-button">▶️ play button</span></strong
+            >
+            at the top right of VS Code
+          </li>
+          <li><strong>Wait</strong> for it to finish (about 2-3 minutes)</li>
+        </ol>
+
+        <div class="success">
+          <strong>What you'll see:</strong>
+          <div class="code-output">
+            ✅ Enhanced scraping complete!<br />
+            📊 Total markets: 47<br />
+            🗺️ Successfully geocoded: 46<br />
+            📈 Geocoding success rate: 97.9%
+          </div>
+        </div>
+
+        <p>
+          <strong>What this does:</strong> Gets detailed information (address,
+          date, time, price) for each market and finds their locations on the
+          map.
+        </p>
+      </div>
+
+      <div class="step">
+        <h3>Step 3: Check Your Website 🌐</h3>
+        <ol>
+          <li><strong>Open your web browser</strong> (Chrome, Safari, etc.)</li>
+          <li>
+            <strong>Go to</strong>
+            <span class="highlight">localhost:5500</span> (or whatever port your
+            website runs on)
+          </li>
+          <li>
+            <strong>Refresh the page</strong> (press F5 or click the refresh
+            button)
+          </li>
+          <li>
+            <strong>Check the map</strong> - you should see updated markets!
+          </li>
+        </ol>
+      </div>
+
+      <h2>🗺️ What If Some Markets Don't Show on the Map?</h2>
+      <p>
+        Sometimes markets don't appear on the map because their address is
+        unclear. Here's how to fix it:
+      </p>
+
+      <h3>Step 1: Check If There's a Problem</h3>
+      <p>After Step 2 above, look at the results. If you see something like:</p>
+      <div class="warning">
+        <div class="code-output">
+          🗺️ Successfully geocoded: 45<br />
+          ❌ Failed geocoding: 2
+        </div>
+        <p>This means 2 markets don't have map locations.</p>
+      </div>
+
+      <h3>Step 2: Fix the Missing Addresses</h3>
+      <ol>
+        <li>
+          <strong>Find the file</strong> called
+          <span class="highlight">add_address_mapping.py</span> in the
+          <span class="highlight">scrapers</span> folder
+        </li>
+        <li>
+          <strong
+            >Click the <span class="play-button">▶️ play button</span></strong
+          >
+        </li>
+        <li>
+          <strong>Follow the prompts</strong> - it will show you markets that
+          need fixing
+        </li>
+      </ol>
+
+      <div class="code-output">
+        1. VLOOIENMARKT Example Market<br />
+        &nbsp;&nbsp;&nbsp;Raw location: Sporthal Something<br />
+        &nbsp;&nbsp;&nbsp;Somestreet 123<br />
+        &nbsp;&nbsp;&nbsp;1234 AB Somewhere<br />
+        &nbsp;&nbsp;&nbsp;Link: https://donevents.nl/product/example-market/<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;Enter corrected address information:<br />
+        &nbsp;&nbsp;&nbsp;Full address for geocoding:
+      </div>
+
+      <h3>Step 3: Research the Correct Address</h3>
+      <div class="warning">
+        <strong>Before typing anything:</strong>
+        <ol>
+          <li>
+            <strong>Click the link</strong> shown to see the original market
+            page
+          </li>
+          <li>
+            <strong>Google the venue name</strong> (like "Sporthal Something
+            Somewhere")
+          </li>
+          <li><strong>Find the correct address</strong> on Google Maps</li>
+          <li><strong>Write down the full address</strong> with postal code</li>
+        </ol>
+      </div>
+
+      <h3>Step 4: Enter the Correct Information</h3>
+      <p><strong>Type the corrected address when asked:</strong></p>
+      <div class="code-output">
+        Full address for geocoding: Correctstreet 456, 1234 XY Somewhere<br />
+        Venue [Sporthal Something]: (press Enter to keep, or type new name)<br />
+        Street address [Somestreet 123]: Correctstreet 456<br />
+        Postal code [1234 AB]: 1234 XY<br />
+        City [Somewhere]: Somewhere<br />
+        Note (optional): Fixed street name spelling
+      </div>
+
+      <h3>Step 5: Apply the Fix</h3>
+      <ol>
+        <li>
+          <strong>Go back to Step 2</strong> (run
+          <span class="highlight">scrape_markets_enhanced.py</span> again)
+        </li>
+        <li>
+          <strong>Check the results</strong> - should now show better success
+          rate
+        </li>
+        <li>
+          <strong>Refresh your website</strong> - the missing markets should now
+          appear!
+        </li>
+      </ol>
+
+      <div class="summary-box">
+        <h3>🎯 Quick Summary</h3>
+        <p><strong>Normal update (every week):</strong></p>
+        <ol>
+          <li>
+            <span class="play-button">▶️</span> Run <code>gather_urls.py</code>
+          </li>
+          <li>
+            <span class="play-button">▶️</span> Run
+            <code>scrape_markets_enhanced.py</code>
+          </li>
+          <li>🌐 Refresh your website</li>
+        </ol>
+
+        <p><strong>If markets are missing from map:</strong></p>
+        <ol>
+          <li>
+            <span class="play-button">▶️</span> Run
+            <code>add_address_mapping.py</code>
+          </li>
+          <li>🔍 Research and fix addresses</li>
+          <li>
+            <span class="play-button">▶️</span> Run
+            <code>scrape_markets_enhanced.py</code> again
+          </li>
+          <li>🌐 Refresh your website</li>
+        </ol>
+      </div>
+
+      <h2>🆘 Help! Something Went Wrong</h2>
+
+      <div class="troubleshooting">
+        <h3>Problem: "No markets found" or very few markets</h3>
+        <div class="error">
+          <strong>What to do:</strong>
+          <ul>
+            <li>Check if donevents.nl website is working</li>
+            <li>Try again in a few minutes</li>
+            <li>The website might have changed - contact technical support</li>
+          </ul>
+        </div>
+
+        <h3>Problem: VS Code won't run the scripts</h3>
+        <div class="error">
+          <strong>What to do:</strong>
+          <ul>
+            <li>Make sure you clicked on the right file first</li>
+            <li>Look for error messages in red text</li>
+            <li>Try closing and reopening VS Code</li>
+          </ul>
+        </div>
+
+        <h3>Problem: Website still shows old information</h3>
+        <div class="error">
+          <strong>What to do:</strong>
+          <ul>
+            <li>
+              Hard refresh your browser (Ctrl+F5 on Windows, Cmd+Shift+R on Mac)
+            </li>
+            <li>Check that the scripts finished successfully</li>
+            <li>Wait a few minutes and try again</li>
+          </ul>
+        </div>
+
+        <h3>Problem: Map is completely empty</h3>
+        <div class="error">
+          <strong>What to do:</strong>
+          <ul>
+            <li>Check your internet connection</li>
+            <li>Make sure your local server is running</li>
+            <li>Try refreshing the browser page</li>
+          </ul>
+        </div>
+      </div>
+
+      <h2>📞 Need More Help?</h2>
+      <p>If you're stuck:</p>
+      <ol>
+        <li>
+          <strong>Look at the error messages</strong> - they often tell you
+          what's wrong
+        </li>
+        <li>
+          <strong>Try the steps again</strong> - sometimes it just needs a retry
+        </li>
+        <li>
+          <strong>Check the detailed guide</strong> (MAINTENANCE_GUIDE.md) for
+          more technical info
+        </li>
+        <li><strong>Contact technical support</strong> if nothing works</li>
+      </ol>
+
+      <div class="success">
+        <h2>🎉 You're Done!</h2>
+        <p>
+          Congratulations! You've successfully updated your flea market website.
+          Your visitors can now see the latest markets with accurate information
+          and locations.
+        </p>
+        <p>
+          <strong>Remember:</strong> Update weekly during market season for the
+          best experience!
+        </p>
+      </div>
+
+      <div class="footer">
+        <p>
+          <strong>Last Updated:</strong> August 2025<br />
+          <strong>Estimated Time:</strong> 5-10 minutes<br />
+          <strong>Difficulty:</strong> Beginner-friendly
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

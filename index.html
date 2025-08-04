@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="nl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nederlandse Vlooienmarkten 2025</title>
+    <meta
+      name="description"
+      content="Ontdek alle vlooienmarkten in Nederland op één interactieve kaart. Vind data, tijden, prijzen en locaties van vlooienmarkten bij jou in de buurt."
+    />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://nederlandse-vlooienmarkten.netlify.app/"
+    />
+    <meta property="og:title" content="Nederlandse Vlooienmarkten 2025" />
+    <meta
+      property="og:description"
+      content="Ontdek alle vlooienmarkten in Nederland op één interactieve kaart. Vind data, tijden, prijzen en locaties van vlooienmarkten bij jou in de buurt."
+    />
+    <meta
+      property="og:image"
+      content="https://nederlandse-vlooienmarkten.netlify.app/og-image.png"
+    />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta
+      property="twitter:url"
+      content="https://nederlandse-vlooienmarkten.netlify.app/"
+    />
+    <meta property="twitter:title" content="Nederlandse Vlooienmarkten 2025" />
+    <meta
+      property="twitter:description"
+      content="Ontdek alle vlooienmarkten in Nederland op één interactieve kaart. Vind data, tijden, prijzen en locaties van vlooienmarkten bij jou in de buurt."
+    />
+    <meta
+      property="twitter:image"
+      content="https://nederlandse-vlooienmarkten.netlify.app/og-image.png"
+    />
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+
+    <!-- Leaflet CSS -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.Default.css"
+    />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <div class="header-content">
+        <h1 class="header-title">Nederlandse Vlooienmarkten</h1>
+        <!-- <p class="header-subtitle">
+          Ontdek alle vlooienmarkten in Nederland op één kaart
+        </p> -->
+      </div>
+    </header>
+
+    <!-- Controls Panel -->
+    <div class="controls-panel">
+      <button class="mobile-filter-toggle" id="mobileFilterToggle">
+        🔍 Filters <span class="toggle-icon">▼</span>
+      </button>
+      <div class="controls-content" id="controlsContent">
+        <!-- Search -->
+        <div class="control-group">
+          <label for="searchInput">🔍 Zoeken</label>
+          <input
+            type="text"
+            id="searchInput"
+            placeholder="Zoek op plaats, naam of locatie..."
+          />
+        </div>
+
+        <!-- Date Filter -->
+        <div class="control-group">
+          <label for="monthFilter">📅 Maand</label>
+          <select id="monthFilter">
+            <option value="">Alle maanden</option>
+            <option value="augustus">Augustus</option>
+            <option value="september">September</option>
+            <option value="oktober">Oktober</option>
+            <option value="november">November</option>
+            <option value="december">December</option>
+            <option value="januari">Januari</option>
+            <option value="februari">Februari</option>
+          </select>
+        </div>
+
+        <!-- Location Filter -->
+        <div class="control-group">
+          <label for="locationFilter">📍 Locatie</label>
+          <input
+            type="text"
+            id="locationFilter"
+            placeholder="Stad of postcode..."
+          />
+        </div>
+
+        <!-- Distance Filter -->
+        <div class="control-group">
+          <label for="distanceFilter">📏 Afstand van locatie</label>
+          <select id="distanceFilter">
+            <option value="">Alle afstanden</option>
+            <option value="5">Binnen 5 km</option>
+            <option value="10">Binnen 10 km</option>
+            <option value="25">Binnen 25 km</option>
+            <option value="50">Binnen 50 km</option>
+          </select>
+        </div>
+
+        <!-- Price Filter -->
+        <div class="control-group">
+          <label for="priceFilter">💰 Toegangsprijs</label>
+          <select id="priceFilter">
+            <option value="">Alle prijzen</option>
+            <option value="gratis">Gratis</option>
+            <option value="betaald">Betaald</option>
+          </select>
+        </div>
+
+        <!-- Reset Button -->
+        <!-- <button id="resetFilters" class="reset-btn">↻ Reset</button> -->
+      </div>
+    </div>
+
+    <!-- Main Content Area -->
+    <div class="main-content">
+      <!-- Sidebar with Market Cards -->
+      <div class="sidebar">
+        <!-- Stats Bar in Sidebar -->
+        <div class="sidebar-stats">
+          <div class="stat-item">
+            <span class="stat-number" id="totalMarkets">-</span>
+            <span class="stat-label">Markten</span>
+          </div>
+          <div class="stat-item" id="filterStat" style="display: none">
+            <span class="stat-number" id="filterCount">-</span>
+            <span class="stat-label" id="filterLabel">Gefilterd</span>
+          </div>
+          <div class="stat-item" id="locationStat" style="display: none">
+            <span class="stat-number" id="locationCount">-</span>
+            <span class="stat-label" id="locationLabel">Locatie</span>
+          </div>
+        </div>
+
+        <div class="sidebar-header">
+          <h3 id="sidebarTitle">📍 Markten</h3>
+        </div>
+
+        <div class="market-cards" id="marketCards">
+          <!-- Market cards will be inserted here -->
+        </div>
+      </div>
+
+      <!-- Map Container -->
+      <div class="map-container">
+        <div id="map"></div>
+      </div>
+    </div>
+
+    <!-- Loading Indicator -->
+    <div id="loading" class="loading">
+      <div class="loading-spinner"></div>
+      <p>Markten laden...</p>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
