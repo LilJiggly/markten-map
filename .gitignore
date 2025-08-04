@@ -58,6 +58,7 @@ tmp/
 
 # Data files (keep structure but ignore large data)
 scrapers/data/*.json
+!scrapers/data/markets_detailed_enhanced.json
 !scrapers/data/.gitkeep
 
 # Backup files
